@@ -1,0 +1,40 @@
+<div class="page-header">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1>Редактирование характеристики #<?=$id?></h1>
+        </div>
+    </div>
+</div>
+<div class="row">
+
+    <?php if (ctype_digit($result)): ?>
+        <div class="col-lg-4">
+            <div class="alert alert-dismissible alert-success">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <strong>Готово!</strong> Характеристика изменена.
+            </div>
+        </div>
+    <?php elseif (strlen($result) > 0): ?>
+        <div class="col-lg-4">
+            <div class="alert alert-dismissible alert-danger">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <?= $result ?>
+            </div>
+        </div>
+    <?php endif; ?>
+
+</div>
+<div class="row">
+    <div class="col-lg-7">
+        <form action="" method="post">
+            <fieldset>
+                <div class="form-group">
+                    <label for="formName">Название характеристики</label>
+                    <input type="text" class="form-control" id="formName" name="name" placeholder="Укажите название" value="<?= $param['name'] ?>">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Сохранить</button>
+            </fieldset>
+        </form>
+    </div>
+</div>

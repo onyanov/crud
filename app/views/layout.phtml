@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Bootswatch: Lumen</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <link rel="stylesheet" href="/styles/bootstrap.css" media="screen">
+        <link rel="stylesheet" href="/styles/custom.min.css" media="screen">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="/">Realty</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarColor01">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item <?= $this->request()->getSName() == 'realty' ? ' active' : '' ?>">
+                            <a class="nav-link" href="/realty">Недвижимость</a>
+                        </li>
+                        <li class="nav-item <?= $this->request()->getSName() == 'param' ? ' active' : '' ?>">
+                            <a class="nav-link" href="/param">Характеристики</a>
+                        </li>
+                        <li class="nav-item <?= $this->request()->getSName() == 'type' ? ' active' : '' ?>">
+                            <a class="nav-link" href="/type">Типы</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container">
+        <?= $content; ?>
+        <footer id="footer">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Выполнено Данилом Оняновым для ВолгГТУ.</p>
+                    <p>Lumen theme made by <a href="http://thomaspark.co">Thomas Park</a>.</p>
+                    <p>Code released under the <a href="https://github.com/thomaspark/bootswatch/blob/master/LICENSE">MIT License</a>.</p>
+                    <p>Based on <a href="https://getbootstrap.com" rel="nofollow">Bootstrap</a>. Icons from <a href="http://fontawesome.io/" rel="nofollow">Font Awesome</a>. Web fonts from <a href="https://fonts.google.com/" rel="nofollow">Google</a>.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+</body>
+</html>
+

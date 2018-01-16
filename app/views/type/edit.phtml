@@ -1,0 +1,46 @@
+<div class="page-header">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1>Редактирование объекта #<?=$id?></h1>
+        </div>
+    </div>
+</div>
+<div class="row">
+
+    <?php if (ctype_digit($result)): ?>
+        <div class="col-lg-4">
+            <div class="alert alert-dismissible alert-success">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <strong>Готово!</strong> Объект недвижимости изменен.
+            </div>
+        </div>
+    <?php elseif (strlen($result) > 0): ?>
+        <div class="col-lg-4">
+            <div class="alert alert-dismissible alert-danger">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <?= $result ?>
+            </div>
+        </div>
+    <?php endif; ?>
+
+</div>
+<div class="row">
+    <div class="col-lg-7">
+        <form action="" method="post">
+            <fieldset>
+                <div class="form-group">
+                    <label for="formAddress">Адрес объекта</label>
+                    <input type="text" class="form-control" id="formAddress" name="address" placeholder="Укажите адрес" value="<?= $post['address'] ?>">
+                    <small id="emailHelp" class="form-text text-muted">Адрес должен быть уникальным.</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="formPrice">Количество</label>
+                    <input type="text" readonly="readonly" class="form-control" value="<?= $post['counter'] ?>">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Сохранить</button>
+            </fieldset>
+        </form>
+    </div>
+</div>
